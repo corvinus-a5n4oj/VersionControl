@@ -60,7 +60,16 @@ namespace UserMaintenance
                 } 
                     }
             }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var torlendo = listBox1.SelectedItem;
+            if (torlendo!= null)
+            {
+                users.Remove((User)torlendo);
+            }
         }
+    }
     }
     
 
