@@ -4,8 +4,6 @@ namespace UserMaintenance.Entities
 { 
 public class User
 {
-	public User()
-	{
 
     public Guid ID { get; set; } = Guid.NewGuid();
     public string FirstName { get; set; }
