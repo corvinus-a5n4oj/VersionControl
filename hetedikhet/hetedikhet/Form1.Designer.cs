@@ -29,9 +29,9 @@ namespace hetedikhet
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chartRateData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -53,16 +53,16 @@ namespace hetedikhet
             // 
             // chartRateData
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartRateData.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartRateData.Legends.Add(legend9);
+            chartArea10.Name = "ChartArea1";
+            this.chartRateData.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chartRateData.Legends.Add(legend10);
             this.chartRateData.Location = new System.Drawing.Point(413, 91);
             this.chartRateData.Name = "chartRateData";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartRateData.Series.Add(series9);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartRateData.Series.Add(series10);
             this.chartRateData.Size = new System.Drawing.Size(540, 413);
             this.chartRateData.TabIndex = 1;
             this.chartRateData.Text = "chart1";
@@ -86,8 +86,6 @@ namespace hetedikhet
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "EUR"});
             this.comboBox1.Location = new System.Drawing.Point(492, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;

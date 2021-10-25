@@ -17,11 +17,54 @@ namespace hetedikhet
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
+            string currencies = Kurrenciak();
+            XmlFeldolgozas2(currencies);
             RefreshData();
         }
+
+        private string Kurrenciak()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+
+            var request = new GetCurrenciesRequestBody
+            {
+            };
+            var response = mnbService.GetCurrencies(request);
+            var currencies = response.GetCurrenciesResult;
+            return currencies;
+        }
+        void XmlFeldolgozas2(string currencies)
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(currencies);
+
+            /*foreach (XmlElement element in xml.DocumentElement)
+            {
+                // Valuta
+                //var childElement = (XmlElement)element.ChildNodes[0];
+                string currency = element.GetAttribute("curr");
+                Currencies.Add(currency); */
+
+            
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                
+                // Valuta
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+                Currencies.Add(rate.Currency);
+            }
+
+
+        
+        }
+
 
         private void RefreshData()
         {
@@ -30,6 +73,7 @@ namespace hetedikhet
             XmlFeldolgozas(result2);
             AdatMegjelenites();
             dataGridView1.DataSource = Rates;
+            comboBox1.DataSource = Currencies;
         }
 
         string ValtoArfolyamok()
@@ -64,6 +108,8 @@ namespace hetedikhet
 
                 // Valuta
                 var childElement = (XmlElement)element.ChildNodes[0];
+                if (childElement == null)
+                    continue;
                 rate.Currency = childElement.GetAttribute("curr");
 
                 // Érték
