@@ -1,4 +1,5 @@
-﻿using hetedikhet.MnbServiceReference;
+﻿using hetedikhet.Entities;
+using hetedikhet.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace hetedikhet
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
             InitializeComponent();
             ValtoArfolyamok();
+            dataGridView1.DataSource = Rates;
         }
         void ValtoArfolyamok()
         {
