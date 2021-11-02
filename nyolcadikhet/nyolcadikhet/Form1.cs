@@ -92,5 +92,13 @@ namespace nyolcadikhet
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory {
+                RibbonColor = btnribbonColor.BackColor,
+                BoxColor = btnboxColor.BackColor
+            };
+        }
     }
 }
