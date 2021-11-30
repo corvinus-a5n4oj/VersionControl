@@ -9,5 +9,6 @@ namespace nyolcadikhet.Abstractions
     public interface IToyFactory
     {
         Toy CreateNew();
+        
     }
 }
